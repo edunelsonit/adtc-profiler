@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GembuGo — Learn without limits</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tutor.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">G</span><span>gembu<span>go</span></span></a>
+      <nav>
+        <button class="nav-link active" data-view="home"><i>⌂</i> Home</button>
+        <button class="nav-link" data-view="courses"><i>▦</i> Explore courses</button>
+        <button class="nav-link" data-view="learning"><i>▶</i> My learning</button>
+        <button class="nav-link" data-view="tutor"><i>✦</i> Offline AI tutor</button>
+        <button class="nav-link" data-view="certificates"><i>◇</i> Certificates</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span>✦</span><div><b>Need help?</b><small>Visit support center</small></div></div>
+        <button class="profile" data-view="profile"><span class="avatar">AM</span><span><b>Amara Mensah</b><small>Student</small></span><i>⌄</i></button>
+      </div>
+    </aside>
+    <main>
+      <header><button class="mobile-menu" aria-label="Open navigation">☰</button><label class="search"><span>⌕</span><input id="course-search" type="search" placeholder="Search courses, topics, or instructors" aria-label="Search courses" /></label><div class="header-actions"><button class="icon-button" aria-label="Learning resources">♧</button><button class="notification" aria-label="Notifications">♢<em></em></button></div></header>
+      <section id="home" class="view active">
+        <div class="welcome"><div><p class="eyebrow">MONDAY, JULY 20</p><h1>Good morning, Amara <span>✦</span></h1><p>Continue growing your skills. You’re making great progress!</p></div><button class="outline-button" data-view="courses">Browse courses <span>→</span></button></div>
+        <section class="hero-card"><div><span class="tag">FEATURED LEARNING PATH</span><h2>Build skills that<br>move you forward.</h2><p>Learn from industry experts, at your own pace.</p><button class="light-button" data-view="courses">Explore learning paths <span>→</span></button></div><div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="book">⌁</div><div class="spark s1">✦</div><div class="spark s2">✧</div></div></section>
+        <section class="section-heading"><div><h2>Continue learning</h2><p>Pick up right where you left off.</p></div><button class="text-button" data-view="learning">View all <span>→</span></button></section>
+        <div id="continue-grid" class="course-grid"></div>
+        <section class="section-heading popular"><div><h2>Popular with learners</h2><p>Explore courses that are trending this week.</p></div><button class="text-button" data-view="courses">Explore all <span>→</span></button></section>
+        <div id="popular-grid" class="course-grid"></div>
+      </section>
+      <section id="courses" class="view"><div class="page-title"><p class="eyebrow">COURSE CATALOGUE</p><h1>Explore courses</h1><p>Discover practical learning designed for your future.</p></div><div class="filters"><button class="chip selected">All courses</button><button class="chip">Technology</button><button class="chip">Business</button><button class="chip">Design</button></div><div id="catalogue-grid" class="course-grid catalogue"></div></section>
+      <section id="learning" class="view"><div class="page-title"><p class="eyebrow">YOUR DASHBOARD</p><h1>My learning</h1><p>Keep the momentum going, one lesson at a time.</p></div><div class="stat-row"><div><span>IN PROGRESS</span><b id="course-count">2</b></div><div><span>LESSONS COMPLETED</span><b id="lesson-count">8</b></div><div><span>AVERAGE SCORE</span><b>92%</b></div></div><div id="learning-grid" class="course-grid catalogue"></div></section>
+      <section id="certificates" class="view"><div class="page-title"><p class="eyebrow">YOUR ACHIEVEMENTS</p><h1>Certificates</h1><p>Celebrate every milestone you’ve earned.</p></div><div id="certificate-empty" class="empty-state"><div>◇</div><h2>Your next certificate is close</h2><p>Complete a course and pass its assessment to unlock a shareable certificate.</p><button class="primary-button" data-view="learning">Continue learning</button></div><div id="certificate-list" class="certificate-list"></div></section>
+      <section id="profile" class="view"><div class="page-title"><p class="eyebrow">ACCOUNT</p><h1>My profile</h1><p>Manage your learning identity.</p></div><div class="profile-card"><span class="profile-avatar">AM</span><div><h2>Amara Mensah</h2><p>amara@gembugo.com</p><span class="role-pill">Student</span></div><button class="outline-button">Edit profile</button></div></section>
+      <section id="tutor" class="view"><div class="page-title"><p class="eyebrow">PRIVATE · ON-DEVICE · OFFLINE-READY</p><h1>GembuGo AI Tutor</h1><p>Ask for explanations, practice questions, or study help without sending your learning data to the cloud.</p></div><div class="tutor-layout"><section class="chat-panel"><div class="tutor-status"><span class="status-dot"></span><div><b id="model-status">Checking local model…</b><small id="model-detail">This assistant runs on your device.</small></div><span class="privacy-label">◉ Local only</span></div><div id="chat-history" class="chat-history"><div class="message assistant"><b>GembuGo Tutor</b><p>Hello Amara! I can explain course ideas, create a practice plan, or quiz you. What are you learning today?</p></div></div><form id="chat-form" class="chat-composer"><input id="chat-input" required placeholder="Ask your offline tutor anything…" autocomplete="off"><button class="primary-button">Send ↑</button></form></section><aside class="tutor-side"><div class="local-card"><span>⌁</span><h3>Built for real conditions</h3><p>Runs a quantized GGUF model through llama.cpp. No API key, cloud connection, or student data upload required.</p></div><h3>Try asking</h3><button class="prompt-button">Explain semantic HTML simply</button><button class="prompt-button">Quiz me on UX research</button><button class="prompt-button">Make a 30-minute study plan</button><div class="benchmark-mini"><span>LOCAL PERFORMANCE TARGET</span><b>15 tokens/sec</b><small>8 GB RAM laptop target</small></div></aside></div></section>
+      <section id="course-detail" class="view"></section>
+      <section id="lesson" class="view"></section>
+      <section id="quiz" class="view"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+name: GembuGo checks
+
+on:
+  push:
+    paths:
+      - "GembuGo/**"
+      - ".github/workflows/gembugo.yml"
+  pull_request:
+    paths:
+      - "GembuGo/**"
+      - ".github/workflows/gembugo.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: GembuGo
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Python server
+        run: python -m py_compile server.py
+
+      - name: Validate browser JavaScript
+        run: node --check app.js
+
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build GembuGo image
+        run: docker build --tag gembugo:ci ./GembuGo
