@@ -6,7 +6,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 ROOT=os.path.dirname(os.path.abspath(__file__)); MODEL_PATH=os.getenv('MODEL_PATH',''); LLAMA_CLI=os.getenv('LLAMA_CLI','llama-cli')
 PORT=int(os.getenv('PORT','8000'))
 SYSTEM='You are GembuGo Tutor, a concise, encouraging offline educational assistant. Use plain language and practical examples.'
-MAX_DOCUMENT_BYTES=5*1024*1024
+MAX_DOCUMENT_BYTES=20*1024*1024
 
 def summarise(text):
  sentences=re.split(r'(?<=[.!?])\s+',re.sub(r'\s+',' ',text).strip())
