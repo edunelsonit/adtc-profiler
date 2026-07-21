@@ -17,6 +17,12 @@ The architecture addresses intermittent connectivity, API cost, student privacy,
 
 The course catalogue, lessons, quizzes, certificates, and profile work without a model. The model is only needed to answer tutor messages.
 
+### Read documents aloud and get summaries
+
+Open **Document reader** in the sidebar and upload a TXT, Markdown, CSV, DOCX, or PDF file (up to 5 MB). GembuGo extracts the text locally, produces a short extractive summary, and can read either the summary or the document through the browser’s built-in text-to-speech voice.
+
+TXT, Markdown, CSV, and DOCX support uses only the Python standard library. PDF text extraction additionally requires the local `pdftotext` command (provided by the `poppler-utils` package on Debian/Ubuntu). Scanned or password-protected PDFs cannot be read unless they contain extractable text.
+
 ### Run with Docker
 
 Build and run the app container from the repository root:
